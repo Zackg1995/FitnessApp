@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render the header 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="headerContainer"
+  >
+    <header>
+      <h1
+        className="header_title"
+      >
+        FitBud
+      </h1>
+      <NavLink
+        activeClassName="is-active"
+        className="nav"
+        exact={true}
+        to="/"
+      >
+        Home Page
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        className="nav"
+        to="/create"
+      >
+        Adding Items Page
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        className="nav"
+        to="/help"
+      >
+        Help Page
+      </NavLink>
+    </header>
+  </div>
+</div>
+`;

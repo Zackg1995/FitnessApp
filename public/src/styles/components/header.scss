@@ -1,0 +1,23 @@
+$font-stack: Helvetica, sans-serif;
+
+.header {
+  background: $dark-blue;
+  color: $light-blue;
+  margin-bottom: 1.6rem;
+  padding: 1.6rem 0;
+}
+
+.header_title {
+  font-size: 3.2rem;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav {
+  list-style-type: none;
+  margin-right: 2rem;
+  padding: 0;
+  overflow: hidden;
+  text-decoration: none;
+  color: #2d91cc;
+}

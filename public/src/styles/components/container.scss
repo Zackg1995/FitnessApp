@@ -1,0 +1,28 @@
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.helpContainer {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.headerContainer {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+//one conatiner for a columns
