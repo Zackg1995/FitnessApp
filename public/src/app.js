@@ -7,6 +7,7 @@ import { addFood } from "./actions/calories";
 import getVisibleCalories from "./selectors/calories";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
+import "./firebase/firebase";
 
 const store = configureStore();
 
