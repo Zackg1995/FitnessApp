@@ -14,6 +14,19 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-firebase.database().ref().set({
+const database = firebase.database();
+
+database.ref().set({
   name: "Zack Grigor",
+  age: 24,
+  isSingle: true,
+});
+
+// database.ref().set("data");
+
+database.ref("age").set(34);
+
+database.ref("attributes").set({
+  height: "5,9",
+  weight: 90,
 });
