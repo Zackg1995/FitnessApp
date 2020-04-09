@@ -4,11 +4,11 @@ const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CSSExtract = new ExtractTextPlugin("styles.css");
 
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
+process.env.NODE_ENV = process.env.NODE_ENV || "dev-server";
 
 if (process.env.NODE_ENV === "test") {
   require("dotenv").config({ path: ".env.test" });
-} else if (process.env.NODE_ENV === "development") {
+} else if (process.env.NODE_ENV === "dev-server") {
   require("dotenv").config({ path: ".env.development" });
 }
 
