@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
-import { addFood } from "./actions/calories";
+import { startAddCalories } from "./actions/calories";
 import getVisibleCalories from "./selectors/calories";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
