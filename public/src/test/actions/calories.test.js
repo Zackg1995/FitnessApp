@@ -4,6 +4,7 @@ import {
   startAddCalories,
   addFood,
   editCalories,
+  startEditCalories,
   removeFood,
   setCalories,
   startSetCalories,
@@ -60,6 +61,27 @@ test("Should edit calories", () => {
       note: "note",
     },
   });
+});
+
+test("should edit calories in FB", (done) => {
+  const store = createMockStore({});
+  const id = calories[1].id;
+  const updates = { description: "beef" };
+  store
+    .dispatch(startEditCalories(id, updates))
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "EDIT_CALORIES",
+        id,
+        updates,
+      });
+      return database.ref(`calories/${id}`).once("value");
+    })
+    .then((snapshot) => {
+      expect(snapshot.val().description).toBe(updates.description);
+      done();
+    });
 });
 
 test("Should setup add calories action object with values", () => {

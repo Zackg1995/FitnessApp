@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import FoodForm from "./FoodForm";
-import { editCalories, startRemoveCalories } from "../actions/calories";
+import { startEditCalories, startRemoveCalories } from "../actions/calories";
 
 const editItemPage = (props) => {
   return (
@@ -9,7 +9,7 @@ const editItemPage = (props) => {
       <FoodForm
         calorie={props.calorie}
         onSubmit={(calorie) => {
-          props.dispatch(editCalories(props.calorie.id, calorie));
+          props.dispatch(startEditCalories(props.calorie.id, calorie));
           props.history.push("/");
         }}
       />
