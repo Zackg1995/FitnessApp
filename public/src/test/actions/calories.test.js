@@ -7,6 +7,7 @@ import {
   removeFood,
   setCalories,
   startSetCalories,
+  startRemoveCalories,
 } from "../../actions/calories";
 import calories from "../fixtures/calories";
 import database from "../../firebase/firebase";
@@ -29,6 +30,25 @@ test("Should setup remove calories action object", () => {
     type: "REMOVEFOOD",
     id: "abc123",
   });
+});
+
+test("remove calories in firebase", (done) => {
+  const store = createMockStore({});
+  const id = calories[2].id;
+  store
+    .dispatch(startRemoveCalories({ id }))
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "REMOVEFOOD",
+        id,
+      });
+      return database.ref(`calories/${id}`).once("value");
+    })
+    .then((snapshot) => {
+      expect(snapshot.val()).toBeFalsy();
+      done();
+    });
 });
 
 test("Should edit calories", () => {

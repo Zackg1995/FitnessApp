@@ -39,6 +39,17 @@ export const removeFood = ({ id } = {}) => ({
   id,
 });
 
+export const startRemoveCalories = ({ id } = {}) => {
+  return (dispatch) => {
+    return database
+      .ref(`calories/${id}`)
+      .remove()
+      .then(() => {
+        dispatch(removeFood({ id }));
+      });
+  };
+};
+
 export const editCalories = (id, updates) => ({
   type: "EDIT_CALORIES",
   id,

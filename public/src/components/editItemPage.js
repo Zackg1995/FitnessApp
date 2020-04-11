@@ -1,21 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
 import FoodForm from "./FoodForm";
-import { editCalories, removeFood } from "../actions/calories";
+import { editCalories, startRemoveCalories } from "../actions/calories";
 
-const editItemPage = props => {
+const editItemPage = (props) => {
   return (
     <div>
       <FoodForm
         calorie={props.calorie}
-        onSubmit={calorie => {
+        onSubmit={(calorie) => {
           props.dispatch(editCalories(props.calorie.id, calorie));
           props.history.push("/");
         }}
       />
       <button
         onClick={() => {
-          props.dispatch(removeFood({ id: props.calorie.id }));
+          props.dispatch(startRemoveCalories({ id: props.calorie.id }));
           props.history.push("/");
         }}
       >
@@ -28,8 +28,8 @@ const editItemPage = props => {
 const mapStateToProps = (state, props) => {
   return {
     calorie: state.calories.find(
-      calorie => calorie.id === props.match.params.id
-    )
+      (calorie) => calorie.id === props.match.params.id
+    ),
   };
 };
 
