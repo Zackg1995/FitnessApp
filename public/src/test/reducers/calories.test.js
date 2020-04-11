@@ -9,7 +9,7 @@ test("Should set default state", () => {
 test("Remove expense by the id", () => {
   const action = {
     type: "REMOVEFOOD",
-    id: calories[2].id
+    id: calories[2].id,
   };
   const state = caloriesReducer(calories, action);
   expect(state).toEqual([calories[0], calories[1]]);
@@ -18,7 +18,7 @@ test("Remove expense by the id", () => {
 test("should not remove food if id not found", () => {
   const action = {
     type: "REMOVEFOOD",
-    id: "-1"
+    id: "-1",
   };
   const state = caloriesReducer(calories, action);
   expect(state).toEqual(calories);
@@ -30,11 +30,11 @@ test("Should add food", () => {
     description: "Rice",
     note: "",
     createdAt: 23000,
-    calories: 100
+    calories: 100,
   };
   const action = {
     type: "ADDFOOD",
-    calorie
+    calorie,
   };
   const state = caloriesReducer(calories, action);
   expect(state).toEqual([...calories, calorie]);
@@ -47,8 +47,8 @@ test("Edit an expense", () => {
     type: "EDIT_CALORIES",
     id: calories[1].id,
     updates: {
-      calorie
-    }
+      calorie,
+    },
   };
   const state = caloriesReducer(calories, action);
   expect(state[1].calorie).toBe(calorie);
@@ -60,9 +60,18 @@ test("No editing to take place as no id found", () => {
     type: "EDIT_CALORIES",
     id: "-1",
     updates: {
-      calorie
-    }
+      calorie,
+    },
   };
   const state = caloriesReducer(calories, action);
   expect(state).toEqual(calories);
+});
+
+test("should set calories", () => {
+  const action = {
+    type: "SET_CALORIES",
+    calories: [calories[1]],
+  };
+  const state = caloriesReducer(calories, action);
+  expect(state).toEqual([calories[1]]);
 });

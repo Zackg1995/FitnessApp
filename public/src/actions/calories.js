@@ -44,3 +44,27 @@ export const editCalories = (id, updates) => ({
   id,
   updates,
 });
+
+export const setCalories = (calories) => ({
+  type: "SET_CALORIES",
+  calories,
+});
+
+export const startSetCalories = () => {
+  return (dispatch) => {
+    return database
+      .ref("calories")
+      .once("value")
+      .then((snapshot) => {
+        const calories = [];
+
+        snapshot.forEach((childSnapshot) => {
+          calories.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val(),
+          });
+        });
+        dispatch(setCalories(calories));
+      });
+  };
+};

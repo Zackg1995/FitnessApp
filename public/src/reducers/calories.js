@@ -7,16 +7,18 @@ export default (state = calorieReducerDefaultState, action) => {
     case "REMOVEFOOD":
       return state.filter(({ id }) => id !== action.id);
     case "EDIT_CALORIES":
-      return state.map(calories => {
+      return state.map((calories) => {
         if (calories.id === action.id) {
           return {
             ...calories,
-            ...action.updates
+            ...action.updates,
           };
         } else {
           return calories;
         }
       });
+    case "SET_CALORIES":
+      return action.calories;
     default:
       return state;
   }
