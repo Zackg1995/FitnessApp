@@ -7,7 +7,7 @@ import editItemPage from "../components/editItemPage";
 import helpPage from "../components/helpPage";
 import notFoundPage from "../components/notFoundPage";
 import Login from "../components/loginPage";
-import PrivateRoute from "./privateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 export const history = createBrowserHistory();
 
