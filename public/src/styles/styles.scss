@@ -1,10 +1,14 @@
 @import "./base/settings";
 @import "./base/base";
 @import "./components/header";
+@import "./components/content";
 @import "./components/container";
+@import "./components/page_header";
 @import "./components/foodform";
 @import "./fontstyles/fonts";
 @import "./components/button";
 @import "./components/helpPage.scss";
 @import "./components/caloriesListFilters.scss";
 @import "./components/box_layout.scss";
+@import "./components/input_group.scss";
+@import "./components/input.scss";

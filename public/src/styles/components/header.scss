@@ -7,17 +7,20 @@ $font-stack: Helvetica, sans-serif;
   padding: 1.6rem 0;
 }
 
-.header_title {
-  font-size: 3.2rem;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+.header_content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size 0;
 }
 
-.nav {
-  list-style-type: none;
-  margin-right: 2rem;
-  padding: 0;
-  overflow: hidden;
-  text-decoration: none;
+.header_title {
   color: #2d91cc;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  h1 {
+    margin: 0;
+  }
 }

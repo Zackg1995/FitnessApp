@@ -1,0 +1,10 @@
+.text_input {
+  border: 1px solid #cacccd;
+  height: 50px;
+  font-weight: 300;
+  padding: $s-size;
+}
+
+.select {
+  @extend .text_input;
+}
