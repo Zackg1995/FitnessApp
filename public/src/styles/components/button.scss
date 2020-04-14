@@ -23,3 +23,13 @@
   width: 100%;
   border-radius: 100px;
 }
+
+.addLoginButton {
+  background: #1c88bf;
+  color: white;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 200;
+  padding: $s-size;
+}
