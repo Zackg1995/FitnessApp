@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import AppRouter, { history } from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import { startSetCalories } from "./actions/calories";
-import getVisibleCalories from "./selectors/calories";
+import { login, logout } from "./actions/auth";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import "./firebase/firebase";
@@ -29,6 +29,7 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    store.dispatch(login(user.uid));
     store.dispatch(startSetCalories()).then(() => {
       renderApp();
       if (history.location.pathname === "/") {
@@ -38,6 +39,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
     console.log("login");
   } else {
+    store.dispatch(logout());
     renderApp();
     history.push("/");
   }
