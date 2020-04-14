@@ -12,6 +12,9 @@ import {
 } from "../../actions/calories";
 import calories from "../fixtures/calories";
 import database from "../../firebase/firebase";
+
+const uid = "testuid";
+const defaultState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
@@ -20,7 +23,7 @@ beforeEach((done) => {
     caloriesData[id] = { description, note, createdAt, calories };
   });
   database
-    .ref("calories")
+    .ref(`users/${uid}/calories`)
     .set(caloriesData)
     .then(() => done());
 });
@@ -34,7 +37,7 @@ test("Should setup remove calories action object", () => {
 });
 
 test("remove calories in firebase", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultState);
   const id = calories[2].id;
   store
     .dispatch(startRemoveCalories({ id }))
@@ -44,7 +47,7 @@ test("remove calories in firebase", (done) => {
         type: "REMOVEFOOD",
         id,
       });
-      return database.ref(`calories/${id}`).once("value");
+      return database.ref(`users/${uid}/calories/${id}`).once("value");
     })
     .then((snapshot) => {
       expect(snapshot.val()).toBeFalsy();
@@ -64,7 +67,7 @@ test("Should edit calories", () => {
 });
 
 test("should edit calories in FB", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultState);
   const id = calories[1].id;
   const updates = { description: "beef" };
   store
@@ -76,7 +79,7 @@ test("should edit calories in FB", (done) => {
         id,
         updates,
       });
-      return database.ref(`calories/${id}`).once("value");
+      return database.ref(`users/${uid}/calories/${id}`).once("value");
     })
     .then((snapshot) => {
       expect(snapshot.val().description).toBe(updates.description);
@@ -93,7 +96,7 @@ test("Should setup add calories action object with values", () => {
 });
 
 test("Should add calories to the database storing it", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultState);
   const calorieData = {
     description: "",
     calories: 0,
@@ -101,7 +104,7 @@ test("Should add calories to the database storing it", (done) => {
     createdAt: 0,
   };
   store
-    .dispatch(startAddCalories({}))
+    .dispatch(startAddCalories())
     .then(() => {
       const actions = store.getActions();
       expect(actions[0]).toEqual({
@@ -111,7 +114,9 @@ test("Should add calories to the database storing it", (done) => {
           ...calorieData,
         },
       });
-      return database.ref(`calories/${actions[0].calorie.id}`).once("value");
+      return database
+        .ref(`users/${uid}/calories/${actions[0].calorie.id}`)
+        .once("value");
     })
     .then((snapshot) => {
       expect(snapshot.val()).toEqual(calorieData);
@@ -128,7 +133,7 @@ test("should setup set calories obj with data", () => {
 });
 
 test("should fetch data", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultState);
   store.dispatch(startSetCalories()).then(() => {
     const actions = store.getActions();
     expect(actions[0]).toEqual({

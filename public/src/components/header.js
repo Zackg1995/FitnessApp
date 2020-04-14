@@ -8,12 +8,7 @@ export const Header = ({ startLogout }) => (
     <div className="headerContainer">
       <header>
         <h1 className="header_title">FitBud</h1>
-        <NavLink
-          to="/"
-          className="nav"
-          activeClassName="is-active"
-          exact={true}
-        >
+        <NavLink to="/dashboard" className="nav" activeClassName="is-active">
           Home Page
         </NavLink>
         <NavLink to="/create" className="nav" activeClassName="is-active">

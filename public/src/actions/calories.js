@@ -7,7 +7,8 @@ export const addFood = (calorie) => ({
 });
 
 export const startAddCalories = (caloriesData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       description = "",
       note = "",
@@ -21,7 +22,7 @@ export const startAddCalories = (caloriesData = {}) => {
       createdAt,
     };
     return database
-      .ref("calories")
+      .ref(`users/${uid}/calories`)
       .push(calorie)
       .then((ref) => {
         dispatch(
@@ -40,9 +41,10 @@ export const removeFood = ({ id } = {}) => ({
 });
 
 export const startRemoveCalories = ({ id } = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     return database
-      .ref(`calories/${id}`)
+      .ref(`users/${uid}/calories/${id}`)
       .remove()
       .then(() => {
         dispatch(removeFood({ id }));
@@ -57,9 +59,10 @@ export const editCalories = (id, updates) => ({
 });
 
 export const startEditCalories = (id, updates) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     return database
-      .ref(`calories/${id}`)
+      .ref(`users/${uid}/calories/${id}`)
       .update(updates)
       .then(() => {
         dispatch(editCalories(id, updates));
@@ -73,9 +76,10 @@ export const setCalories = (calories) => ({
 });
 
 export const startSetCalories = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     return database
-      .ref("calories")
+      .ref(`users/${uid}/calories`)
       .once("value")
       .then((snapshot) => {
         const calories = [];
