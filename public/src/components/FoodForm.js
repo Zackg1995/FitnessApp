@@ -13,28 +13,28 @@ export default class FoodForm extends React.Component {
       note: props.calorie ? props.calorie.note : "",
       calories: props.calorie ? props.calorie.calories.toString() : "",
       createdAt: props.calorie ? moment(props.calorie.createdAt) : moment(),
-      calanderFocused: false
+      calanderFocused: false,
     };
   }
 
-  onDescriptionChange = e => {
+  onDescriptionChange = (e) => {
     const description = e.target.value;
     this.setState(() => ({ description }));
   };
 
-  onChangeNote = e => {
+  onChangeNote = (e) => {
     const note = e.target.value;
     this.setState(() => ({ note }));
   };
 
-  onCaloriesChange = e => {
+  onCaloriesChange = (e) => {
     const calories = e.target.value;
     if (!calories || calories.match(/^\d{1,}(\.\d{0,0})?$/)) {
       this.setState(() => ({ calories }));
     }
   };
 
-  onDateChange = createdAt => {
+  onDateChange = (createdAt) => {
     if (createdAt) {
       this.setState(() => ({ createdAt }));
     }
@@ -44,7 +44,7 @@ export default class FoodForm extends React.Component {
     this.setState(() => ({ calanderFocused: focused }));
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     if (!this.state.description || !this.state.calories) {
       this.setState(() => ({ error: "Please provide details" }));
@@ -54,51 +54,48 @@ export default class FoodForm extends React.Component {
         description: this.state.description,
         calories: parseFloat(this.state.calories, 10),
         createdAt: this.state.createdAt.valueOf(),
-        note: this.state.note
+        note: this.state.note,
       });
     }
   };
 
   render() {
     return (
-      <div className="container">
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit} className="add-option">
-          <input
-            type="text"
-            placeholder="Description"
-            autoFocus
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
-            className="add-option"
-          ></input>
-          <input
-            type="text"
-            placeholder="Calories"
-            value={this.state.calories}
-            onChange={this.onCaloriesChange}
-            className="add-option"
-          />
-          <textarea
-            placeholder="Add a note for the addition of food"
-            value={this.state.note}
-            onChange={this.onChangeNote}
-            className="add-option"
-          ></textarea>
-          <div className="add-option">
-            <SingleDatePicker
-              date={this.state.createdAt}
-              onDateChange={this.onDateChange}
-              focused={this.state.calanderFocused}
-              onFocusChange={this.onFocusChange}
-              numberOfMonths={1}
-              isOutsideRange={() => false}
-            />
-          </div>
-
-          <button className="addFood">Submit food!</button>
-        </form>
-      </div>
+      <form onSubmit={this.onSubmit} className="form">
+        {this.state.error && <p className="form_error">{this.state.error}</p>}
+        <input
+          type="text"
+          placeholder="Description"
+          autoFocus
+          value={this.state.description}
+          onChange={this.onDescriptionChange}
+          className="text_input"
+        ></input>
+        <input
+          type="text"
+          placeholder="Calories"
+          value={this.state.calories}
+          onChange={this.onCaloriesChange}
+          className="text_input"
+        />
+        <textarea
+          placeholder="Add a note for the addition of food"
+          value={this.state.note}
+          onChange={this.onChangeNote}
+          className="textarea"
+        ></textarea>
+        <SingleDatePicker
+          date={this.state.createdAt}
+          onDateChange={this.onDateChange}
+          focused={this.state.calanderFocused}
+          onFocusChange={this.onFocusChange}
+          numberOfMonths={1}
+          isOutsideRange={() => false}
+        />
+        <div>
+          <button className="addFood">Save Food!</button>
+        </div>
+      </form>
     );
   }
 }

@@ -1,45 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render the header 1`] = `
-<div
+<header
   className="header"
 >
   <div
-    className="headerContainer"
+    className="content_container"
   >
-    <header>
-      <h1
-        className="header_title"
-      >
-        FitBud
-      </h1>
-      <NavLink
-        activeClassName="is-active"
-        className="nav"
+    <div
+      className="header_content"
+    >
+      <Link
+        className="header_title "
         to="/dashboard"
       >
-        Home Page
-      </NavLink>
-      <NavLink
-        activeClassName="is-active"
-        className="nav"
+        <h1>
+          FitBud
+        </h1>
+      </Link>
+      <Link
+        className="header_title "
         to="/create"
       >
-        Adding Items Page
-      </NavLink>
-      <NavLink
-        activeClassName="is-active"
-        className="nav"
+        <h1>
+          Add food!
+        </h1>
+      </Link>
+      <Link
+        className="header_title "
         to="/help"
       >
-        Help Page
-      </NavLink>
+        <h1>
+          Help Page
+        </h1>
+      </Link>
       <button
+        className="addLoginButton"
         onClick={[Function]}
       >
         Logout
       </button>
-    </header>
+    </div>
   </div>
-</div>
+</header>
 `;

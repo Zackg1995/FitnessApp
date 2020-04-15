@@ -5,22 +5,27 @@ import { startEditCalories, startRemoveCalories } from "../actions/calories";
 
 const editItemPage = (props) => {
   return (
-    <div>
-      <FoodForm
-        calorie={props.calorie}
-        onSubmit={(calorie) => {
-          props.dispatch(startEditCalories(props.calorie.id, calorie));
-          props.history.push("/");
-        }}
-      />
-      <button
-        onClick={() => {
-          props.dispatch(startRemoveCalories({ id: props.calorie.id }));
-          props.history.push("/");
-        }}
-      >
-        Remove
-      </button>
+    <div className="page_header">
+      <div className="content_container">
+        <FoodForm
+          calorie={props.calorie}
+          onSubmit={(calorie) => {
+            props.dispatch(startEditCalories(props.calorie.id, calorie));
+            props.history.push("/");
+          }}
+        />
+        <div className="content_button">
+          <button
+            onClick={() => {
+              props.dispatch(startRemoveCalories({ id: props.calorie.id }));
+              props.history.push("/");
+            }}
+            className="removeButton"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -9,13 +9,16 @@ const CaloriesListItem = ({
   calories,
   createdAt,
 }) => (
-  <div className="caloriesListStyle">
-    <Link to={`/edit/${id}`}>
-      <h3>{description}</h3>
-    </Link>
-    <p>Amount of calories: {calories} </p>
-    <p> {moment(createdAt).format("MMMM Do, YYYY")}</p>
-  </div>
+  <Link to={`/edit/${id}`} className="item-list">
+    <div>
+      {" "}
+      <h3 className="list-title">{description}</h3>{" "}
+      <span className="date-title">
+        {moment(createdAt).format("MMMM Do, YYYY")}
+      </span>{" "}
+    </div>
+    <h3 className="amount-title">Amount of calories: {calories}</h3>
+  </Link>
 );
 
 export default CaloriesListItem;

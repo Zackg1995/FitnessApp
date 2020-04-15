@@ -8,3 +8,8 @@
 .select {
   @extend .text_input;
 }
+
+.textarea {
+  @extend .text_input;
+  height: 10rem;
+}

@@ -7,8 +7,13 @@
   font-size: $l-size;
   padding: 2.4rem;
   margin-top: 20px;
-  width: 100%;
   border-radius: 100px;
+}
+
+.removeButton {
+  @extend .addFood;
+  background-color: $light-blue;
+  color: $dark-blue;
 }
 
 .addBMI {
