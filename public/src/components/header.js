@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { startLogout } from "../actions/auth";
+import Footer from "../components/footer";
 
 export const Header = ({ startLogout }) => (
   <header className="header">
