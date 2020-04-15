@@ -5,13 +5,16 @@
 }
 
 .footer_content_container {
-  align-items: center;
   margin: 0 auto;
+  padding: 0 $s-size;
   max-width: 80rem;
-  display: flex;
-  justify-content: center;
 }
 
 .content_button {
   text-align: right;
+}
+
+.image_content {
+  display: flex;
+  justify-content: space-between;
 }
