@@ -9,7 +9,6 @@ import notFoundPage from "../components/notFoundPage";
 import Login from "../components/loginPage";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
-import Footer from "../components/footer";
 
 export const history = createBrowserHistory();
 
@@ -25,7 +24,6 @@ const AppRouter = () => (
         <Route component={notFoundPage} />
       </Switch>
     </div>
-    <Footer />
   </Router>
 );
 

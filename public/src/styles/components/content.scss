@@ -4,6 +4,14 @@
   max-width: 80rem;
 }
 
+.footer_content_container {
+  align-items: center;
+  margin: 0 auto;
+  max-width: 80rem;
+  display: flex;
+  justify-content: center;
+}
+
 .content_button {
   text-align: right;
 }

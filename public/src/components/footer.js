@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Footer extends React.Component {
   render() {
     return (
-      <div className="container">
-        <div className="content_containter">
-          <footer>
-            <p className="footer_text">This is the footer</p>
-          </footer>
+      <footer>
+        <div className="footer_content_container">
+          <div>
+            <Link to="/dashboard">
+              <img className="loader-img" src="/images/home.png" />
+            </Link>
+          </div>
         </div>
-      </div>
+      </footer>
     );
   }
 }
