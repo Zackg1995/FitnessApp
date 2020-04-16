@@ -5,12 +5,9 @@ import { startAddCalories } from "../actions/calories";
 
 const addItemPage = (props) => (
   <div>
-    <div className="page_header">
+    <div className="page_header_form">
       <div className="content_container">
         <h1 className="page_title">What did you eat?</h1>
-      </div>
-
-      <div className="content_container">
         <FoodForm
           onSubmit={(calories) => {
             props.dispatch(startAddCalories(calories));

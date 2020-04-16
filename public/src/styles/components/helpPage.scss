@@ -1,19 +1,35 @@
-.contentStyle {
-  width: 100%;
-  background-color: $light-blue;
-  opacity: 0.8;
-  border-radius: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: "Roboto", sans-serif;
+.avatar {
+  display: flex;
+  justify-content: left;
 }
 
-.contentStyleTwo {
-  width: 60rem;
-  background-color: $light-blue;
-  opacity: 0.8;
-  border-radius: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: "Roboto", sans-serif;
+.speech-bubble {
+  width: 60vw;
+  height: 25vh;
+  display: flex;
+  justify-content: right;
+  overflow: auto;
+}
+
+.bubble {
+  position: relative;
+  background: white;
+  border: 2px solid $dark-blue;
+  border-radius: 30px;
+  padding: 20px;
+  color: $dark-blue;
+  margin-left: 20px;
+}
+
+.bubble::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -25px;
+  top: 100px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 25px solid $dark-blue;
 }
