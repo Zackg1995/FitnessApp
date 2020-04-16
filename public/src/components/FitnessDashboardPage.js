@@ -3,9 +3,11 @@ import CaloriesList from "./CaloriesList";
 import CaloriesListFilters from "./caloriesListFilters";
 
 const FitnessDashboardPage = () => (
-  <div>
-    <CaloriesListFilters />
-    <CaloriesList />
+  <div className="page_header_form">
+    <div className="content_container">
+      <CaloriesListFilters />
+      <CaloriesList />
+    </div>
   </div>
 );
 

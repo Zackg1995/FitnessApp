@@ -1,7 +1,7 @@
 .addFood {
-  background-color: $dark-blue;
+  background-color: white;
   border: none;
-  border-bottom: 0.6rem solid darken($dark-blue, 10%);
+  border: 1px solid darken($dark-blue, 10%);
   color: $light-blue;
   font-weight: bold;
   font-size: $l-size;
@@ -40,5 +40,12 @@
 }
 
 .addLogoutButton {
-  padding: $s-size;
+  @extend .addLoginButton;
+  background-color: white;
+  color: #2d91cc;
+  padding: 0;
+  margin: 0;
+  h1 {
+    margin: 0;
+  }
 }

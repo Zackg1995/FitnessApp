@@ -4,6 +4,12 @@
   padding: $l-size 0;
 }
 
+.page_header_form {
+  @extend .page_header;
+
+  height: 81vh;
+}
+
 .page_title {
   font-weight: 500;
   margin: 0;

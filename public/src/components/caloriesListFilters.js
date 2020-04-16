@@ -26,7 +26,7 @@ class CaloriesListFilters extends React.Component {
 
   render() {
     return (
-      <div className="content_container">
+      <div className="calorie_list_container">
         <h1 className="page_title">Let's have a look at what you've eaten</h1>
         <div className="group">
           <div className="itemsOfGroup">

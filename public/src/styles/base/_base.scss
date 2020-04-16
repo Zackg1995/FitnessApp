@@ -38,7 +38,8 @@ button:disabled {
 footer {
   position: fixed;
   bottom: 0;
-  background-color: $dark-blue;
+  border-top: 5px solid $dark-blue;
+  margin-bottom: 5px;
   width: 100vw;
   height: 60px;
 }
