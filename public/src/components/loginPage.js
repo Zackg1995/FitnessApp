@@ -7,7 +7,7 @@ export const Login = ({ startLogin }) => (
     <div className="loginLayout_box">
       <h1 className="loginLayout_title">FitBud</h1>
       <p>Here to help!</p>
-      <button onClick={startLogin} className="addLoginButton">
+      <button onClick={startLogin} className="btn">
         Login with Google!
       </button>
     </div>
