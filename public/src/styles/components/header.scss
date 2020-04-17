@@ -1,11 +1,13 @@
 $font-stack: Helvetica, sans-serif;
 
 .header {
-  border-bottom: 3px solid $dark-blue;
-  color: $light-blue;
-  margin-bottom: 0.5rem;
+  background-color: $light-grey;
+  border-bottom: 1.5px solid black;
+  color: black;
 }
-
+.header::after {
+  border-bottom: $orange;
+}
 .header_content {
   align-items: center;
   display: flex;

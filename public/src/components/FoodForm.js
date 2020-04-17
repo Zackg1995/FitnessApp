@@ -93,7 +93,7 @@ export default class FoodForm extends React.Component {
           isOutsideRange={() => false}
         />
         <div>
-          <button className="addFood">Save Food!</button>
+          <button className="btn">Save Food!</button>
         </div>
       </form>
     );

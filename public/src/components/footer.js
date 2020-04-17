@@ -14,6 +14,9 @@ class Footer extends React.Component {
             <Link to="/create">
               <img className="loader-img" src="/images/add.png" />
             </Link>
+            <Link to="/news">
+              <img className="loader-img" src="/images/news.png" />
+            </Link>
             <Link to="/help">
               <img className="loader-img" src="/images/help.png" />
             </Link>

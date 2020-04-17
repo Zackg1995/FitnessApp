@@ -1,4 +1,5 @@
 import React from "react";
+import numeral from "numeral";
 
 export default class BMIForm extends React.Component {
   //creating state to hold e.target.values
@@ -48,7 +49,7 @@ export default class BMIForm extends React.Component {
           ></input>
         </form>
         <h3 className="headerOne">Calculated BMI: {this.state.bmi}</h3>
-        <button className="addFood" onClick={this.calculateBmi}>
+        <button className="btn" onClick={this.calculateBmi}>
           Submit for BMI!
         </button>
       </div>

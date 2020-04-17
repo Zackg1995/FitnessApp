@@ -7,6 +7,7 @@ const editItemPage = (props) => {
   return (
     <div className="page_header">
       <div className="content_container">
+        <h1 className="page_title">Let's make a change!</h1>
         <FoodForm
           calorie={props.calorie}
           onSubmit={(calorie) => {
@@ -20,7 +21,7 @@ const editItemPage = (props) => {
               props.dispatch(startRemoveCalories({ id: props.calorie.id }));
               props.history.push("/");
             }}
-            className="removeButton"
+            className="btn_reverse"
           >
             Remove
           </button>
