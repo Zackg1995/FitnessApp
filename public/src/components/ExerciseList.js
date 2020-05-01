@@ -6,9 +6,9 @@ import selectExercise from "../selectors/exercise";
 const ExerciseList = (props) => (
   <div className="content_container">
     <div className="list-header">
-      <div className="for-mobile">Food & Calories</div>
-      <div className="for-desktop">Food</div>
-      <div className="for-desktop">Calories</div>
+      <div className="for-mobile">Exercise & Calories Burnt</div>
+      <div className="for-desktop">Exercise</div>
+      <div className="for-desktop">Calories Burnt</div>
     </div>
     <div className="list-body">
       {props.exercises.length === 0 ? (

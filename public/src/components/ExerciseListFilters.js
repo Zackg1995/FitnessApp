@@ -27,7 +27,7 @@ class ExerciseListFilters extends React.Component {
   render() {
     return (
       <div className="calorie_list_container">
-        <h1 className="page_title">Let's have a look at what you've eaten</h1>
+        <h1 className="page_title">Let's have a look at our workouts!</h1>
         <div className="group">
           <div className="itemsOfGroup">
             {" "}
@@ -56,7 +56,7 @@ class ExerciseListFilters extends React.Component {
               }}
             >
               <option value="date">Date</option>
-              <option value="Calorie Amount">Calorie Amount</option>
+              <option value="Calorie Amount">Calorie Burnt</option>
             </select>
           </div>
           <div className="itemsOfGroup">

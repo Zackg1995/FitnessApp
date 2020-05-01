@@ -7,6 +7,9 @@ export const Header = ({ startLogout }) => (
   <header className="header">
     <div className="content_container">
       <div className="header_content">
+        <Link to="/help">
+          <img className="loader-img" src="/images/help.png" />
+        </Link>
         <Link to="/dashboard" className="header_title ">
           <img src="/images/Fit-bud.png" height="70" width="150" />
         </Link>
