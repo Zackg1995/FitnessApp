@@ -10,6 +10,7 @@ import "./styles/styles.scss";
 import "./firebase/firebase";
 import { firebase } from "./firebase/firebase";
 import Loading from "./components/Loading";
+import { startSetExercise } from "./actions/exercise";
 
 const store = configureStore();
 
@@ -36,6 +37,11 @@ firebase.auth().onAuthStateChanged((user) => {
       if (history.location.pathname === "/") {
         history.push("/dashboard");
       }
+      store.dispatch(startSetExercise()).then(() => {
+        if (history.location.pathname === "/") {
+          history.push("exercise");
+        }
+      });
     });
 
     console.log("login");
