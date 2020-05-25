@@ -69,7 +69,7 @@ export default class ExerciseForm extends React.Component {
           type="text"
           placeholder="What exercise took place?"
           autoFocus
-          value={this.state.exercise}
+          value={this.state.exercises}
           onChange={this.onExerciseChange}
           className="text_input"
         ></input>

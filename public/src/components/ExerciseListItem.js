@@ -17,7 +17,7 @@ const ExerciseListItem = ({
         {moment(createdAt).format("MMMM Do, YYYY")}
       </span>{" "}
     </div>
-    <h3 className="amount-title">Amount of calories: {caloriesBurnt}</h3>
+    <h3 className="amount-title">Calories burnt: {caloriesBurnt}</h3>
   </Link>
 );
 

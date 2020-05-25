@@ -37,13 +37,13 @@ export default class BMIForm extends React.Component {
         <form className="form">
           <input
             type="text"
-            placeholder="Height"
+            placeholder="Height (M, 1.8)"
             className="bmi_text_input"
             onChange={this.changeHeight}
           ></input>
           <input
             type="text"
-            placeholder="Weight"
+            placeholder="Weight (Kg, 90)"
             className="bmi_text_input"
             onChange={this.changeWeight}
           ></input>

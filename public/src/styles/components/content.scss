@@ -22,3 +22,14 @@
   display: flex;
   justify-content: space-between;
 }
+
+.formatContent {
+  display: flex;
+  justify-content: center;
+}
+
+.contentStyle {
+  border: 2px dashed $orange;
+  margin-top: 30%;
+  padding: 10px;
+}

@@ -10,7 +10,7 @@ import editExercise from "../components/editExercise";
 import helpPage from "../components/helpPage";
 import notFoundPage from "../components/notFoundPage";
 import Login from "../components/loginPage";
-import News from "../components/newsPage";
+import TotalDisplay from "../components/totalDisplay";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
@@ -28,7 +28,7 @@ const AppRouter = () => (
         <PrivateRoute path="/edit/:id" component={editItemPage} />
         <PrivateRoute path="/editExercise/:id" component={editExercise} />
         <PrivateRoute path="/help" component={helpPage} />
-        <PrivateRoute path="/news" component={News} />
+        <PrivateRoute path="/news" component={TotalDisplay} />
         <Route component={notFoundPage} />
       </Switch>
     </div>

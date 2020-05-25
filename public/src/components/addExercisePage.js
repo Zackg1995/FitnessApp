@@ -11,7 +11,7 @@ const addExercisePage = (props) => (
         <ExerciseForm
           onSubmit={(exercises) => {
             props.dispatch(startAddExercise(exercises));
-            props.history.push("/");
+            props.history.push("/exercise");
           }}
         />
       </div>

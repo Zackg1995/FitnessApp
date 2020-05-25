@@ -27,7 +27,6 @@ class ExerciseListFilters extends React.Component {
   render() {
     return (
       <div className="calorie_list_container">
-        <h1 className="page_title">Let's have a look at our workouts!</h1>
         <div className="group">
           <div className="itemsOfGroup">
             {" "}

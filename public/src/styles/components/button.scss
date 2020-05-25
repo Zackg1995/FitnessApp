@@ -10,7 +10,7 @@
 
 .addLogoutButton {
   @extend .addLoginButton;
-  background-color: white;
+  background-color: $light-grey;
   color: black;
   padding: 0;
   margin: 0;
